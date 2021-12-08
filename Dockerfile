@@ -20,8 +20,8 @@ COPY settings.xml $MAVEN_CONFIG/settings.xml
 RUN mkdir $MAVEN_CONFIG/repository \
   && chown maven:maven $USER_HOME_DIR -R \
   && mkdir -p /root/.m2/repository /.m2/repository \
-  && chown -R maven:maven /root/.m2 /.m2 \
-  && chmod 777 /root/.m2 /.m2
+  && chown -R maven:maven /root/.m2 /.m2/repository \
+  && chmod -R 777 /root/.m2 /.m2
 
 USER maven
 
